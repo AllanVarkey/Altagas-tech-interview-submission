@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mn2/TxyJ5Jc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Allan\\source\\repos\\TMS\\TMS\\TMS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Allan\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.11\\microsoft.aspnetcore.app.internal.assets.10.0.11.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.11\\microsoft.aspnetcore.components.webassembly.10.0.11.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\10.0.11\\microsoft.aspnetcore.components.webassembly.server.10.0.11.nupkg.sha512",
+    "C:\\Users\\Allan\\.nuget\\packages\\microsoft.jsinterop.webassembly\\10.0.11\\microsoft.jsinterop.webassembly.10.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

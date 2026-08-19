@@ -1,0 +1,4 @@
+wwwroot\appsettings.Development.json
+wwwroot\appsettings.json
+C:\Users\Allan\source\repos\TMS\TMS.Client\wwwroot\appsettings.Development.json
+C:\Users\Allan\source\repos\TMS\TMS.Client\wwwroot\appsettings.json
