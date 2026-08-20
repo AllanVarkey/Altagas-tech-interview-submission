@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using TMS.Data.DatabaseContext;
 using TMS.Data.Interfaces;
-using TMS.Data.Models;
+using TMS.Data.DatabaseModels;
 
 namespace TMS.Data.Datastore
 {
@@ -18,20 +18,26 @@ namespace TMS.Data.Datastore
 
         }
 
-        public Task<IEnumerable<Trips>> AddTrips(IEnumerable<Trips> tripsWrite)
+        public List<Trips> AddTrips(IEnumerable<Trips> tripsToWrite)
         {
-            throw new NotImplementedException();
+            foreach(Trips trip in tripsToWrite)
+            {
+                this.tmsDbContext.Trips.Add(trip);
+            }
+            this.tmsDbContext.SaveChanges();
+            return tripsToWrite.ToList();
         }
 
-        public Task<IEnumerable<Trips>> GetAllTripsAsync()
+        public List<Trips> GetAllTrips()
         {
-            return this.tmsDbContext.Trips.Include(x => x.RailCarEventRecords).ToListAsync();
+            var result =   this.tmsDbContext.Trips.Include(x => x.RailCarEventRecords).ToList();
+            return result;
         }
 
-        public Task<Trips> GetTripByIdAsync(int tripId)
+        public Trips? GetTripById(int tripId)
         {
-            Trips trip = this.tmsDbContext.Trips.Where(item => item.TripId == tripId).Include(x => x.RailCarEventRecords).FirstOrDefault();
-            return Task.FromResult(trip);
+            Trips? trip = this.tmsDbContext.Trips.Include(x => x.RailCarEventRecords).FirstOrDefault(item => item.TripId == tripId); 
+            return trip;
         }
     }
 }

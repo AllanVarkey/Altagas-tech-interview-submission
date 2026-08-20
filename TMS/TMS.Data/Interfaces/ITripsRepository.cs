@@ -1,12 +1,13 @@
 ﻿
-using TMS.Data.Models;
+using TMS.Data.DatabaseModels;
+
 
 namespace TMS.Data.Interfaces
 {
     public interface ITripsRepository
     {
-        Task<IEnumerable<Trips>> GetAllTripsAsync();
-        Task<Trips> GetTripByIdAsync(int tripId);
-        Task<IEnumerable<Trips>> AddTrips(IEnumerable<Trips> tripsWrite);
+        List<Trips> GetAllTrips();
+        Trips? GetTripById(int tripId);
+        List<Trips> AddTrips(IEnumerable<Trips> tripsToWrite);
     }
 }

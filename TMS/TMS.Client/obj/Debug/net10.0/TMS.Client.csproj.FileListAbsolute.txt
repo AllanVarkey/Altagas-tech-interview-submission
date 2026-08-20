@@ -1284,6 +1284,9 @@ C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\Microsoft.DotNet.HotReload.WebAssembly.Browser.jiityjz7hu.wasm
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.rsxvgfzaup.wasm
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.e1cmxnu9f1.pdb
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\dotnet.js
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\blazor.webassembly.js.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.286cdd0mnj.wasm.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.o6y2k6vgc3.wasm.gz
@@ -1492,11 +1495,8 @@ C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\Microsoft.DotNet.HotReload.WebAssembly.Browser.jiityjz7hu.wasm.gz
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.xs5drq9rvz.wasm
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.q7bvwuvad9.pdb
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\dotnet.js
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.xs5drq9rvz.wasm.gz
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.q7bvwuvad9.pdb.gz
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.rsxvgfzaup.wasm.gz
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\TMS.Client.e1cmxnu9f1.pdb.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\wwwroot\_framework\dotnet.js.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\TMS.Client.staticwebassets.runtime.json
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\bin\Debug\net10.0\TMS.Client.staticwebassets.endpoints.json
@@ -2137,8 +2137,9 @@ C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\2ymp303s20-{0}-tptq2av103-tptq2av103.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\mgsokz0h9z-{0}-lfu7j35m59-lfu7j35m59.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\uieggh4gik-{0}-jiityjz7hu-jiityjz7hu.gz
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\zggrz5nbz0-{0}-xs5drq9rvz-xs5drq9rvz.gz
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\dbr321omnm-{0}-q7bvwuvad9-q7bvwuvad9.gz
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\zggrz5nbz0-{0}-rsxvgfzaup-rsxvgfzaup.gz
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\dbr321omnm-{0}-e1cmxnu9f1-e1cmxnu9f1.gz
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\ench1ds7z9-{0}-432v88jo5j-432v88jo5j.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\4yaa43cgna-{0}-tswichycbp-tswichycbp.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\g7upxhu9l4-{0}-tswichycbp-tswichycbp.gz
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
@@ -2152,4 +2153,3 @@ C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\refint\TMS.Client.dll
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\TMS.Client.pdb
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\ref\TMS.Client.dll
-C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\compressed\ench1ds7z9-{0}-011o4gqdme-011o4gqdme.gz

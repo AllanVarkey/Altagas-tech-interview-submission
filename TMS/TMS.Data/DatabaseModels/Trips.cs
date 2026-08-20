@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TMS.Data.Models
+namespace TMS.Data.DatabaseModels
 {
     public class Trips
     {
@@ -15,7 +15,7 @@ namespace TMS.Data.Models
         public DateTime EndDate { get; set; } = new DateTime();
         public int TotalHours { get; set; } = 0;
 
-        public IEnumerable<RailCardEventRecord> RailCarEventRecords { get; set; } = new List<RailCardEventRecord>();
+        public IEnumerable<RailCarEventRecord> RailCarEventRecords { get; set; } = new List<RailCarEventRecord>();
 
 
     }

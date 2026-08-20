@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TMS.BusinessLogic.DatabaseModels
+namespace TMS.Data.DatabaseModels
 {
     public class City
     {

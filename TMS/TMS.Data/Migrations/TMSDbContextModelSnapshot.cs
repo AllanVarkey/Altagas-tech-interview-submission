@@ -22,7 +22,7 @@ namespace TMS.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("TMS.Data.Models.City", b =>
+            modelBuilder.Entity("TMS.Data.DatabaseModels.City", b =>
                 {
                     b.Property<int>("CityId")
                         .ValueGeneratedOnAdd()
@@ -339,7 +339,7 @@ namespace TMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("TMS.Data.Models.RailCardEventRecord", b =>
+            modelBuilder.Entity("TMS.Data.DatabaseModels.RailCarEventRecord", b =>
                 {
                     b.Property<int>("EventId")
                         .ValueGeneratedOnAdd()
@@ -367,10 +367,10 @@ namespace TMS.Data.Migrations
 
                     b.HasIndex("TripId");
 
-                    b.ToTable("RailCardEventRecords");
+                    b.ToTable("RailCarEventRecord");
                 });
 
-            modelBuilder.Entity("TMS.Data.Models.Trips", b =>
+            modelBuilder.Entity("TMS.Data.DatabaseModels.Trips", b =>
                 {
                     b.Property<int>("TripId")
                         .ValueGeneratedOnAdd()
@@ -404,9 +404,9 @@ namespace TMS.Data.Migrations
                     b.ToTable("Trips");
                 });
 
-            modelBuilder.Entity("TMS.Data.Models.RailCardEventRecord", b =>
+            modelBuilder.Entity("TMS.Data.DatabaseModels.RailCarEventRecord", b =>
                 {
-                    b.HasOne("TMS.Data.Models.Trips", "Trip")
+                    b.HasOne("TMS.Data.DatabaseModels.Trips", "Trip")
                         .WithMany("RailCarEventRecords")
                         .HasForeignKey("TripId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -415,7 +415,7 @@ namespace TMS.Data.Migrations
                     b.Navigation("Trip");
                 });
 
-            modelBuilder.Entity("TMS.Data.Models.Trips", b =>
+            modelBuilder.Entity("TMS.Data.DatabaseModels.Trips", b =>
                 {
                     b.Navigation("RailCarEventRecords");
                 });

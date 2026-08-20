@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using TMS.BusinessLogic.DatabaseModels;
-using TMS.Data.Models;
+
+using TMS.Data.DatabaseModels;
 
 
 namespace TMS.Data.DatabaseContext
@@ -17,7 +14,7 @@ namespace TMS.Data.DatabaseContext
 
         public DbSet<City> Cities { get; set; } = default!;
         public DbSet<Trips> Trips { get; set; } = default!;
-        public DbSet<RailCardEventRecord> RailCardEventRecords { get; set; } = default!;
+        public DbSet<RailCarEventRecord> RailCarEventRecord { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -87,7 +84,7 @@ namespace TMS.Data.DatabaseContext
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
-            modelBuilder.Entity<RailCardEventRecord>(railCardEventRecord =>
+            modelBuilder.Entity<RailCarEventRecord>(railCardEventRecord =>
             {
                 railCardEventRecord.HasKey(railCardEventRecordObject => railCardEventRecordObject.EventId); 
             });

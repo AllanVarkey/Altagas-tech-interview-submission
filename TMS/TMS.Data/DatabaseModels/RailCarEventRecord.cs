@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿
 using TMS.Data.Enums;
 
-namespace TMS.BusinessLogic.DatabaseModels
+namespace TMS.Data.DatabaseModels
 {
-    public class RailCardEventRecord
+    public class RailCarEventRecord
     {
         public int EventId { get; set; }
         public string EquipmentId { get; set; } = default!;

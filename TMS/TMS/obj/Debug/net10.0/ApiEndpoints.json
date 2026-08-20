@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "ContainingType": "TMS.Controllers.TripsController",
+    "Method": "AddTrip",
+    "RelativePath": "api/Trips/AddTrip",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tripToWriteList",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[TMS.Dtos.TripWrite, TMS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TMS.Controllers.TripsController",
+    "Method": "GetAllTrips",
+    "RelativePath": "api/Trips/GetAllTrips",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TMS.Controllers.TripsController",
+    "Method": "GetTripById",
+    "RelativePath": "api/Trips/GetTripById/{tripId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tripId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
