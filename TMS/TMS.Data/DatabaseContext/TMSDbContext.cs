@@ -13,6 +13,7 @@ namespace TMS.Data.DatabaseContext
 
         }
 
+        //city table is seeded 
         public DbSet<City> Cities { get; set; } = default!;
         public DbSet<Trips> Trips { get; set; } = default!;
         public DbSet<RailCarEventRecord> RailCarEventRecord { get; set; } = default!;
@@ -75,7 +76,8 @@ namespace TMS.Data.DatabaseContext
                 new City { CityId = 48, CityName = "Dartmouth", TimezoneId = "Atlantic Standard Time" },
                 new City { CityId = 49, CityName = "Halifax", TimezoneId = "Atlantic Standard Time" }
             );
-
+            // setting the one to many relation between the trips and the railcar event records.
+            // A trip can have many railcar event records but a railcar event record can only belong to one trip
             modelBuilder.Entity<Trips>(trip =>
             {
                 trip.HasKey(tripObject => tripObject.TripId);
@@ -84,7 +86,8 @@ namespace TMS.Data.DatabaseContext
                     .HasForeignKey(x => x.TripId)
                     .OnDelete(DeleteBehavior.Cascade);
             });
-
+            // In teh railcar event the eventtype needs to be parsed to a CHAR becuase we are using enums .
+            
             modelBuilder.Entity<RailCarEventRecord>(railCardEventRecord =>
             {
                 railCardEventRecord.HasKey(railCardEventRecordObject => railCardEventRecordObject.EventId);

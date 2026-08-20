@@ -1,9 +1,10 @@
-﻿
-@page "/"
+﻿@page "/"
 @inject HttpClient Http
 @rendermode InteractiveWebAssembly
-@using TMS.Client.Models
+@using System.Text.Json
 @using Microsoft.AspNetCore.Components.Forms
+@using TMS.Client.Models
+@using TMS.Data.DatabaseModels
 
 <PageTitle>Railcar Trips</PageTitle>
 
@@ -34,13 +35,64 @@
     </div>
 }
 
+@*
+TODO: i want to change the OriginCity Id and the destinationcity id to actual city names but i was running out of time
+so i decided to leave it as is for now.
+*@
+
+@if (uploadedTrips?.Count > 0)
+{
+    <h4 class="mt-4">Uploaded Trips</h4>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Trip ID</th>
+                <th>Equipment ID</th>
+                <th>Origin City</th>
+                <th>Destination City</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Total Hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trip in uploadedTrips)
+            {
+                <tr>
+                    <td>@trip.TripId</td>
+                    <td>@trip.EquipmentId</td>
+                    <td>@trip.OriginCityId</td>
+                    <td>@trip.DestinationCityId</td>
+                    <td>@trip.StartDate.ToString("yyyy-MM-dd")</td>
+                    <td>@trip.EndDate.ToString("yyyy-MM-dd")</td>
+                    <td>@trip.TotalHours</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
 @code {
     private IBrowserFile? selectedFile;
     private string? statusMessage;
     private bool isSuccess = false;
+    private List<Trips> uploadedTrips = new List<Trips>();
+    private Dictionary<int, string> cityCache = new Dictionary<int, string>();
+    protected override async Task OnInitializedAsync()
+    {
+
+
+
+        var response = await Http.GetAsync("api/trips/GetAllTrips");
+        var jsonContent = await response.Content.ReadAsStringAsync();
+        uploadedTrips = JsonSerializer.Deserialize<List<Trips>>(jsonContent) ?? new List<Trips>();
+    }
 
     private async Task OnFileSelected(InputFileChangeEventArgs e)
     {
+
+
         try
         {
             Console.WriteLine($"OnFileSelected called. FileCount: {e.FileCount}");
@@ -95,10 +147,12 @@
             content.Add(fileContent, "file", selectedFile.Name);
 
             var response = await Http.PostAsync("api/trips/upload-csv", content);
-
             if (response.IsSuccessStatusCode)
             {
                 statusMessage = "CSV uploaded successfully!";
+                var jsonContent = await response.Content.ReadAsStringAsync();
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                uploadedTrips = JsonSerializer.Deserialize<List<Trips>>(jsonContent, options) ?? new List<Trips>();
                 isSuccess = true;
                 selectedFile = null;
             }

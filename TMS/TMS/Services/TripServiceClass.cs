@@ -32,18 +32,19 @@ namespace TMS.Services
                 Trips currentTrip = null;
                 List<RailCarEventRecord> currentTripEvents = null;
 
-
+                // iterating over each record in the equipment group
                 foreach (var eventRecord in equipmentGroup)
                 {
-
-
+                    // get the city for the event record
                     var city = cityRepository.GetCityById(eventRecord.CityId);
-
+                    // pass the time with the city timezoneId to convert to UTC. 
                     var timeInUTC = DateTimeConvertToUtc(eventRecord.EventTime, city.TimezoneId);
                     eventRecord.EventTime = timeInUTC;
 
                     switch (eventRecord.EventType)
                     {
+                        // case When the Trip Started. 
+                        // in this case we will be setting the Start Time and the railcardEvent records
                         case RailCarEventType.Released: // W = trip start
                             currentTripEvents = new List<RailCarEventRecord>();
                             currentTripEvents.Add(mapper.Map<RailCarEventRecord>(eventRecord));
@@ -55,7 +56,9 @@ namespace TMS.Services
                                 RailCarEventRecords = currentTripEvents
                             };
                             break;
-
+                        // case when the trip ended
+                        // in this case we are calculating the total hours and setting the destination city and end date
+                        // However i noticed there is an issue with the total hours . its not calculating accurately . I will have to look into it and fix it
                         case RailCarEventType.Placed: // Z = trip end
                             if (currentTrip != null)
                             {
@@ -68,7 +71,7 @@ namespace TMS.Services
                             currentTrip =null;
                             currentTripEvents = null;
                             break;
-
+                        // these are the intermittant arrival and departure between the release and place events. 
                         default: // A: Arrival , D: Departures
                             if (currentTrip != null)  
                             {
@@ -93,7 +96,7 @@ namespace TMS.Services
             }
             catch (ArgumentException)
             {
-                // Time falls in DST gap, adjust by 1 hour and retry
+                // There is a DST gap. so im adding 1 hour to the local time to handle the DST gap. This is a workaround and may not be accurate for all cases.
                 localTime = localTime.AddHours(1);
                 return TimeZoneInfo.ConvertTimeToUtc(localTime, timeZone);
             }

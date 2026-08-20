@@ -91,3 +91,15 @@ C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Client\obj\Debug\net10.0\staticwebassets.build.json

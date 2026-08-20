@@ -41,15 +41,9 @@ namespace TMS.Controllers
             }
             return Ok(trip);
         }
-
-        [HttpPost("AddTrip")]
-        public  IActionResult AddTrip([FromBody] List<RailCarEventRecordWrite> railCarEventRecords)
-        {
-
-           List<Trips> constructedTrips =  tripServiceClass.BuildTripsFromRailCarEvents(railCarEventRecords);
-            var addedTrips = tripsRepository.AddTrips(constructedTrips);
-            return Ok(addedTrips);
-        }
+        
+        // this is where the uplaod csv file will be handled. 
+        // calling the helper function in the tripService class to build the trips from rail car events
 
         [HttpPost("upload-csv")]
         public async Task<IActionResult> UploadCsv(IFormFile file)
