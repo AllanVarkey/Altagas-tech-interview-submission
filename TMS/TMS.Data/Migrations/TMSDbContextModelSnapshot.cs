@@ -357,8 +357,9 @@ namespace TMS.Data.Migrations
                     b.Property<DateTime>("EventTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("EventType")
-                        .HasColumnType("int");
+                    b.Property<string>("EventType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TripId")
                         .HasColumnType("int");

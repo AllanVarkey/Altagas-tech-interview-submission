@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TMS.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7e4de97e8df63f6d38ea057e52a2cd7addff3cc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+60899beb1ee75c41a5a13fd110d6a1d1f7b05a0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TMS.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TMS.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

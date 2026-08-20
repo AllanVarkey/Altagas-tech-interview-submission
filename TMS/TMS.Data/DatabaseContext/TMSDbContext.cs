@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 using TMS.Data.DatabaseModels;
+using TMS.Data.Enums;
 
 
 namespace TMS.Data.DatabaseContext
@@ -86,9 +87,14 @@ namespace TMS.Data.DatabaseContext
 
             modelBuilder.Entity<RailCarEventRecord>(railCardEventRecord =>
             {
-                railCardEventRecord.HasKey(railCardEventRecordObject => railCardEventRecordObject.EventId); 
+                railCardEventRecord.HasKey(railCardEventRecordObject => railCardEventRecordObject.EventId);
+                railCardEventRecord.Property(x => x.EventType)
+                    .HasConversion(
+                        v => ((char)v).ToString(),
+                        v => (RailCarEventType)char.Parse(v)
+                    );
             });
-       
+
         }
     }
 }

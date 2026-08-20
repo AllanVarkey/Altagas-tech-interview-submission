@@ -33,7 +33,11 @@
           "net10.0": {
             "framework": "net10.0",
             "targetAlias": "net10.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Data\\TMS.Data.csproj": {
+                "projectPath": "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Data\\TMS.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -53,6 +57,10 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[33.1.0, )"
+            },
             "Microsoft.AspNetCore.App.Internal.Assets": {
               "suppressParent": "All",
               "target": "Package",

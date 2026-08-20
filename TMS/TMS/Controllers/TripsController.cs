@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TMS.Client.Models;
 using TMS.Data.DatabaseModels;
+using TMS.Data.Enums;
 using TMS.Data.Interfaces;
 using TMS.Dtos;
+using TMS.Services;
 
 namespace TMS.Controllers
 {
@@ -12,10 +15,12 @@ namespace TMS.Controllers
     public class TripsController : ControllerBase
     {
         public required ITripsRepository tripsRepository { get; set; }
+        public required ITripServiceClass tripServiceClass { get; set; }
         public IMapper autoMapper { get; set; }
-        public TripsController(ITripsRepository _tripsRepository, IMapper _automapper)
+        public TripsController(ITripsRepository _tripsRepository, ITripServiceClass _tripServiceClass ,IMapper _automapper)
         {
             tripsRepository = _tripsRepository;
+            tripServiceClass = _tripServiceClass;
             autoMapper = _automapper;
         }
 
@@ -38,11 +43,37 @@ namespace TMS.Controllers
         }
 
         [HttpPost("AddTrip")]
-        public  IActionResult AddTrip([FromBody] IEnumerable<TripWrite> tripToWriteList)
+        public  IActionResult AddTrip([FromBody] List<RailCarEventRecordWrite> railCarEventRecords)
         {
-            var tripsToWrite = autoMapper.Map<IEnumerable<Trips>>(tripToWriteList);
-            var addedTrips = tripsRepository.AddTrips(tripsToWrite);
+
+           List<Trips> constructedTrips =  tripServiceClass.BuildTripsFromRailCarEvents(railCarEventRecords);
+            var addedTrips = tripsRepository.AddTrips(constructedTrips);
             return Ok(addedTrips);
+        }
+
+        [HttpPost("upload-csv")]
+        public async Task<IActionResult> UploadCsv(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return BadRequest("File Is empty");
+
+            using var stream = file.OpenReadStream();
+            using var reader = new StreamReader(stream);
+            using var csv = new CsvHelper.CsvReader(reader, System.Globalization.CultureInfo.InvariantCulture);
+
+            var rawRecords = csv.GetRecords<RailCarEventCsvModel>().ToList();
+
+            var railCardEventRecordWriteDtos = rawRecords.Select(r => new RailCarEventRecordWrite
+            {
+                EquipmentId = r.EquipmentId,
+                EventType = (RailCarEventType)r.EventCode[0],
+                EventTime = DateTime.Parse(r.EventTime),
+                CityId = r.CityId
+            }).ToList();
+
+            var trips = tripServiceClass.BuildTripsFromRailCarEvents(railCardEventRecordWriteDtos);
+            var savedTrips = tripsRepository.AddTrips(trips);
+            return Ok(savedTrips);
         }
     }
 }

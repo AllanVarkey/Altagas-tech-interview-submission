@@ -5,18 +5,26 @@ using TMS.Data.DatabaseContext;
 using TMS.Data.Datastore;
 using TMS.Data.Interfaces;
 using Scalar.AspNetCore;
+using TMS.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 builder.Services.AddControllers();
+builder.Services.AddScoped(sp => new HttpClient
+{
+    BaseAddress = new Uri(builder.Configuration["ApiBaseUrl"] ?? "https://localhost:7104")
+});
+builder.Services.AddHttpClient();
 builder.Services.AddAutoMapper(config => config.AddProfile<TMSAutoMapperProfile>(), typeof(TMSAutoMapperProfile).Assembly);
 builder.Services.AddScoped<ITripsRepository, TripsDatastore>();
 builder.Services.AddScoped<ICityRepository, CityDatastore>();
 builder.Services.AddScoped<IRailCarEventRecordRepository, RailCarEventRecordDatastore>();
+builder.Services.AddScoped<ITripServiceClass, TripServiceClass>();
 // add the dbcontext. the connection string in the appsettings.json is a docker instance of mssql2022. the database is called TMS
 builder.Services.AddDbContext<TMSDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));

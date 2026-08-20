@@ -1,13 +1,118 @@
-﻿@page "/"
-@page "/railcartrips"
-
+﻿
+@page "/"
+@inject HttpClient Http
+@rendermode InteractiveWebAssembly
+@using TMS.Client.Models
+@using Microsoft.AspNetCore.Components.Forms
 
 <PageTitle>Railcar Trips</PageTitle>
 
 <h3>RailCar Trip Details</h3>
 
-@code {
+<div class="mb-3">
+    <label>Select CSV File</label>
+    <InputFile OnChange="@OnFileSelected" accept=".csv" />
+</div>
 
+@if (selectedFile is not null)
+{
+    <div class="alert alert-info">
+        Selected file: <strong>@selectedFile.Name</strong> (@(selectedFile.Size / 1024)KB)
+    </div>
 }
 
+<button @onclick="UploadCSV"
+        disabled="@(selectedFile is null)"
+        class="btn btn-primary">
+    Upload CSV
+</button>
 
+@if (!string.IsNullOrEmpty(statusMessage))
+{
+    <div class="alert @(isSuccess ? "alert-success" : "alert-danger")">
+        @statusMessage
+    </div>
+}
+
+@code {
+    private IBrowserFile? selectedFile;
+    private string? statusMessage;
+    private bool isSuccess = false;
+
+    private async Task OnFileSelected(InputFileChangeEventArgs e)
+    {
+        try
+        {
+            Console.WriteLine($"OnFileSelected called. FileCount: {e.FileCount}");
+
+            if (e.FileCount > 0)
+            {
+                var files = e.GetMultipleFiles();
+                Console.WriteLine($"Files found: {files.Count}");
+
+                selectedFile = files.FirstOrDefault();
+
+                if (selectedFile != null)
+                {
+                    Console.WriteLine($"File selected: {selectedFile.Name}");
+                    statusMessage = $"File selected: {selectedFile.Name} ({selectedFile.Size / 1024} KB)";
+                    isSuccess = true;
+                }
+            }
+            else
+            {
+                Console.WriteLine("No files selected");
+                statusMessage = "No file selected";
+                isSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error in OnFileSelected: {ex.Message}");
+            Console.WriteLine($"Stack trace: {ex.StackTrace}");
+            statusMessage = $"Error selecting file: {ex.Message}";
+            isSuccess = false;
+        }
+    }
+
+    private async Task UploadCSV()
+    {
+        if (selectedFile is null)
+        {
+            statusMessage = "Please select a file first.";
+            isSuccess = false;
+            return;
+        }
+
+        try
+        {
+            using var stream = selectedFile.OpenReadStream(maxAllowedSize: 5 * 1024 * 1024);
+            using var content = new MultipartFormDataContent();
+
+            var fileContent = new StreamContent(stream);
+            fileContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(selectedFile.ContentType);
+
+            content.Add(fileContent, "file", selectedFile.Name);
+
+            var response = await Http.PostAsync("api/trips/upload-csv", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                statusMessage = "CSV uploaded successfully!";
+                isSuccess = true;
+                selectedFile = null;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                statusMessage = $"Error uploading CSV: {response.StatusCode} - {errorContent}";
+                isSuccess = false;
+            }
+        }
+        catch (Exception ex)
+        {
+            statusMessage = $"Upload failed: {ex.Message}";
+            isSuccess = false;
+        }
+    }
+}

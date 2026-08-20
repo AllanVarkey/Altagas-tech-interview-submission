@@ -7,7 +7,7 @@ using TMS.Dtos;
 
 namespace TMS.Services
 {
-    public class TripServiceClass
+    public class TripServiceClass : ITripServiceClass
     {
         private readonly ITripsRepository tripsRepository;
         private readonly ICityRepository  cityRepository;
@@ -29,7 +29,7 @@ namespace TMS.Services
             foreach (var equipmentGroup in groupedByEquipment)
             {
 
-                Trips currentTrip = new Trips();
+                Trips currentTrip = null;
                 List<RailCarEventRecord> currentTripEvents = null;
 
 
@@ -49,6 +49,7 @@ namespace TMS.Services
                             currentTripEvents.Add(mapper.Map<RailCarEventRecord>(eventRecord));
                             currentTrip = new Trips
                             {
+                                OriginCityId = eventRecord.CityId.ToString(),
                                 EquipmentId = eventRecord.EquipmentId,
                                 StartDate = eventRecord.EventTime,
                                 RailCarEventRecords = currentTripEvents
@@ -58,7 +59,9 @@ namespace TMS.Services
                         case RailCarEventType.Placed: // Z = trip end
                             if (currentTrip != null)
                             {
+                                currentTrip.DestinationCityId = eventRecord.CityId.ToString();
                                 currentTrip.EndDate = eventRecord.EventTime;
+                                currentTrip.TotalHours = (int)currentTrip.EndDate.Subtract(currentTrip.StartDate).TotalHours;
                                 currentTripEvents?.Add(mapper.Map<RailCarEventRecord>(eventRecord));
                                 trips.Add(currentTrip);
                             }
@@ -67,7 +70,10 @@ namespace TMS.Services
                             break;
 
                         default: // A: Arrival , D: Departures
-                            currentTripEvents?.Add(mapper.Map<RailCarEventRecord>(eventRecord));
+                            if (currentTrip != null)  
+                            {
+                                currentTripEvents?.Add(mapper.Map<RailCarEventRecord>(eventRecord));
+                            }
                             break;
                     }
                 }
@@ -80,7 +86,17 @@ namespace TMS.Services
         private DateTime DateTimeConvertToUtc(DateTime localTime, string timeZoneId)
         {
             var timeZone = TimeZoneInfo.FindSystemTimeZoneById(timeZoneId);
-            return TimeZoneInfo.ConvertTimeToUtc(localTime, timeZone);
+
+            try
+            {
+                return TimeZoneInfo.ConvertTimeToUtc(localTime, timeZone);
+            }
+            catch (ArgumentException)
+            {
+                // Time falls in DST gap, adjust by 1 hour and retry
+                localTime = localTime.AddHours(1);
+                return TimeZoneInfo.ConvertTimeToUtc(localTime, timeZone);
+            }
         }
 
 

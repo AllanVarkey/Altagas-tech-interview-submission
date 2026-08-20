@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace TMS.Data.DatabaseModels
 {
@@ -14,7 +15,8 @@ namespace TMS.Data.DatabaseModels
         public DateTime StartDate { get; set; } = new DateTime();
         public DateTime EndDate { get; set; } = new DateTime();
         public int TotalHours { get; set; } = 0;
-
+        
+        [JsonIgnore]
         public IEnumerable<RailCarEventRecord> RailCarEventRecords { get; set; } = new List<RailCarEventRecord>();
 
 

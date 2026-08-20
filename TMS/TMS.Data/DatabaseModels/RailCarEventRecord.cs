@@ -1,4 +1,5 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
 using TMS.Data.Enums;
 
 namespace TMS.Data.DatabaseModels
