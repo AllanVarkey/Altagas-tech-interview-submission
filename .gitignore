@@ -4,4 +4,7 @@
 
 /TMS/.vs
 .vs/*
-/bin/Debug/*
+/TMS/bin/Debug/*
+/TMS.BusinessLogic/bin/Debug/*
+/TMS.Client/bin/Debug/*
+/TMS.Data/bin/Debug/*

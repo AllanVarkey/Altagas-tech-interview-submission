@@ -21,7 +21,7 @@ namespace TMS.Services
             this.mapper = _mapper;
         }
 
-        public List<Trips> BuildTrips(List<RailCarEventRecordWrite> railcarEventRecords)
+        public List<Trips> BuildTripsFromRailCarEvents(List<RailCarEventRecordWrite> railcarEventRecords)
         {
             var trips =  new List<Trips>();
             // since there are multiple equipments, we have to group them by equipmentId
@@ -29,11 +29,10 @@ namespace TMS.Services
             foreach (var equipmentGroup in groupedByEquipment)
             {
 
-                Trips currentTrip = null;
+                Trips currentTrip = new Trips();
                 List<RailCarEventRecord> currentTripEvents = null;
 
-                // each equipment entry has a cityid so we can use that to get the timezone from the city table.
-                // once we have that we can convert the event time to the utc based on that timezone of the city.
+
                 foreach (var eventRecord in equipmentGroup)
                 {
 
@@ -47,29 +46,28 @@ namespace TMS.Services
                     {
                         case RailCarEventType.Released: // W = trip start
                             currentTripEvents = new List<RailCarEventRecord>();
-                            currentTripEvents.Add(eventRecord);
+                            currentTripEvents.Add(mapper.Map<RailCarEventRecord>(eventRecord));
                             currentTrip = new Trips
                             {
                                 EquipmentId = eventRecord.EquipmentId,
                                 StartDate = eventRecord.EventTime,
                                 RailCarEventRecords = currentTripEvents
                             };
-                    
                             break;
 
                         case RailCarEventType.Placed: // Z = trip end
                             if (currentTrip != null)
                             {
                                 currentTrip.EndDate = eventRecord.EventTime;
-                                currentTripEvents?.Add(eventRecord);
+                                currentTripEvents?.Add(mapper.Map<RailCarEventRecord>(eventRecord));
                                 trips.Add(currentTrip);
-                                currentTrip = null;
-                                currentTripEvents = null;
                             }
+                            currentTrip =null;
+                            currentTripEvents = null;
                             break;
 
-                        default:
-                            currentTripEvents?.Add(eventRecord);
+                        default: // A: Arrival , D: Departures
+                            currentTripEvents?.Add(mapper.Map<RailCarEventRecord>(eventRecord));
                             break;
                     }
                 }
