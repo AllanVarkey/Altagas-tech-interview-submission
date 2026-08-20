@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Allan\\source\\repos\\TMS\\TMS.Client\\TMS.Client.csproj": {}
+    "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Client\\TMS.Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Allan\\source\\repos\\TMS\\TMS.Client\\TMS.Client.csproj": {
+    "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Client\\TMS.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Allan\\source\\repos\\TMS\\TMS.Client\\TMS.Client.csproj",
+        "projectUniqueName": "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Client\\TMS.Client.csproj",
         "projectName": "TMS.Client",
-        "projectPath": "C:\\Users\\Allan\\source\\repos\\TMS\\TMS.Client\\TMS.Client.csproj",
+        "projectPath": "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Client\\TMS.Client.csproj",
         "packagesPath": "C:\\Users\\Allan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Allan\\source\\repos\\TMS\\TMS.Client\\obj\\",
+        "outputPath": "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Client\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

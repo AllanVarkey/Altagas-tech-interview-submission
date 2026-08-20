@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YeWO9x2lwjU=",
+  "dgSpecHash": "qrJxiUeb704=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Allan\\source\\repos\\TMS\\TMS.Client\\TMS.Client.csproj",
+  "projectFilePath": "C:\\Users\\Allan\\source\\repos\\Altagas-tech-interview-submission\\TMS\\TMS.Client\\TMS.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Allan\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.11\\microsoft.aspnetcore.app.internal.assets.10.0.11.nupkg.sha512",
     "C:\\Users\\Allan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.11\\microsoft.aspnetcore.authorization.10.0.11.nupkg.sha512",

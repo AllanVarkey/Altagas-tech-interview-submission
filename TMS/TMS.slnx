@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="TMS.Client/TMS.Client.csproj" />
+  <Project Path="TMS.Data/TMS.Data.csproj" Id="76719324-4c94-4b05-92f7-66a2937fc219" />
   <Project Path="TMS/TMS.csproj" />
 </Solution>

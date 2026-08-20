@@ -1,0 +1,15 @@
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\bin\Debug\net10.0\TMS.Data.deps.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\bin\Debug\net10.0\TMS.Data.runtimeconfig.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\bin\Debug\net10.0\TMS.Data.dll
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\bin\Debug\net10.0\TMS.Data.pdb
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.csproj.AssemblyReference.cache
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.AssemblyInfoInputs.cache
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.AssemblyInfo.cs
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.csproj.CoreCompileInputs.cache
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.sourcelink.json
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.dll
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\refint\TMS.Data.dll
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.pdb
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\TMS.Data.genruntimeconfig.cache
+C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS.Data\obj\Debug\net10.0\ref\TMS.Data.dll

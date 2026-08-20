@@ -1,60 +1,68 @@
 is_global = true
 build_property.TargetFramework = net10.0
-build_property.TargetFrameworkIdentifier = .NETCoreApp
-build_property.TargetFrameworkVersion = v10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
-build_property.EntryPointFilePath = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.EntryPointFilePath = 
 build_property.RootNamespace = TMS
 build_property.RootNamespace = TMS
-build_property.ProjectDir = C:\Users\Allan\source\repos\TMS\TMS\
+build_property.ProjectDir = C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Allan\source\repos\TMS\TMS
+build_property.MSBuildProjectDirectory = C:\Users\Allan\source\repos\Altagas-tech-interview-submission\TMS\TMS
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/App.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/App.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/Pages/Error.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/Pages/Home.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/Pages/NotFound.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/Pages/NotFound.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/Pages/Weather.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/Routes.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/_Imports.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/Layout/MainLayout.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-z3rem9fexy
 
-[C:/Users/Allan/source/repos/TMS/TMS/Components/Layout/NavMenu.razor]
+[C:/Users/Allan/source/repos/Altagas-tech-interview-submission/TMS/TMS/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-656aqv7bgl

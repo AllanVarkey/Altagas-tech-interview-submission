@@ -1,11 +1,17 @@
+using Microsoft.EntityFrameworkCore;
 using TMS.Client.Pages;
 using TMS.Components;
+using TMS.Data.DatabaseContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
+// add the dbcontext. the connection string in the appsettings.json is a docker instance of mssql2022. the database is called TMS
+builder.Services.AddDbContext<TMSDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
 var app = builder.Build();
 
